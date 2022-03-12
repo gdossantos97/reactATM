@@ -12,10 +12,10 @@ const ATMDeposit = ({ onChange, isDeposit }) => {
 
 const Account = () => {
   let deposit = 0; // state of this transaction
-  const [totalState, setTotalState] = React.useState(0);
+  const [totalState, setTotalState] = React.useState(0); // Will keep the state as 0 and preserve the value to be called on later 
   const [isDeposit, setIsDeposit] = React.useState(true);
 
-  let status = `Account Balance $ ${totalState} `;
+  let status = `Account Balance $ ${totalState} `;  
   console.log(`Account Rendered with isDeposit: ${isDeposit}`);
   const handleChange = event => {
     console.log(`handleChange ${event.target.value}`);
@@ -28,7 +28,7 @@ const Account = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>  // Event listener for 
       <h2 id="total">{status}</h2>
       <button onClick={() => setIsDeposit(true)}>Deposit</button>
       <button onClick={() => setIsDeposit(false)}>Cash Back</button>
